@@ -404,6 +404,52 @@ a {
     transition: background 0.1s linear;
 }
 
+.scroll-up {
+    position: fixed;
+    right: 45px;
+    bottom: 62px;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+    color: black;
+    cursor: pointer;
+    visibility: hidden;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0 2px black;
+    opacity: 0;
+    transition: 0.2s;
+    transform: translateY(25px);
+}
+
+.scroll-up::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    content: "\1F815";
+    font-weight: 700;
+}
+
+.scroll-up:hover {
+    color: orange;
+    box-shadow: inset 0 0 0 3px orange;
+}
+
+.scroll-up.active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-up__svg {
+    fill: none;
+}
+
 @media (max-width: 770px) {
     .nav {
         display: none;
@@ -433,6 +479,11 @@ a {
 
     .burger {
         display: block;
+    }
+
+    .scroll-up {
+        right: 10px;
+        bottom: 10px;
     }
 }
 

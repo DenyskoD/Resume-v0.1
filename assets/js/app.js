@@ -79,6 +79,40 @@ $(function(){
     });
 
 
+    // 
+    // ==========================================
+    // scroll-up
+
+    const scrollUp = $(".scroll-up");
+    let offset = 100;
+    let scrollPos = $(window).scrollTop();
+
+    checkScroll(scrollPos, offset);
+
+
+    // onScroll
+
+    $(window).on("scroll", function() {
+        scrollPos = $(this).scrollTop();
+        checkScroll(scrollPos , offset);
+    });
+
+    function checkScroll(scrollPos , offset) {
+        if(scrollPos >= offset) {
+            scrollUp.addClass("active");
+        } else {
+            scrollUp.removeClass("active");
+        }
+    }
+    // click  ->> smooth scroll function by data-scroll="#intro"
+
+
+
+
+
+
+
+
 
 
 
